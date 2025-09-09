@@ -1,0 +1,200 @@
+/* Este código resetea los estilos que el navegador pone por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E8F5E9; /* Un verde clarito, como de naturaleza */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Esto hace que ocupe toda la altura de la pantalla */
+    color: #333; /* Color de texto oscuro */
+}
+
+/* Estilos para las pantallas */
+.pantalla {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.oculto {
+    display: none; /* Esta clase oculta la pantalla */
+}
+
+/* ===== HEADER NUEVO ===== */
+.header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #2E7D32;
+}
+
+.header p {
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Estilo del título principal */
+h1 {
+    margin-bottom: 2rem;
+    color: #2E7D32; /* Verde oscuro */
+    font-size: 1.5rem;
+}
+
+/* Contenedor de los círculos */
+.contenedor-circle {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+/* Estilo general de TODOS los círculos */
+.circulo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* ¡Esta línea lo hace circular! */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+/* Colores para cada tipo de material (EMOJIS CORREGIDOS) */
+#plastico { background-color: #FFEB3B; } /* Amarillo - Botella 🧴 */
+#papel    { background-color: #2196F3; } /* Azul - Caja 📦 */
+#vidrio   { background-color: #4CAF50; } /* Verde - Tarro 🫙 */
+#metal    { background-color: #9E9E9E; } /* Gris - Lata 🥫 */
+
+/* ===== FORMULARIO ===== */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+    text-align: left;
+    color: #555;
+}
+
+form input[type="date"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* ===== BOTONES ===== */
+/* Botón VERDE principal */
+.btn-verde {
+    background-color: #388E3C; /* Verde tierra */
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn-verde:hover {
+    background-color: #2E7D32; /* Un verde un poco más oscuro al pasar el mouse */
+}
+
+/* Botones generales */
+button {
+    background-color: #388E3C;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #2E7D32;
+}
+
+/* ===== PANTALLA DE CONFIRMACIÓN ===== */
+.imagen-recolector {
+    font-size: 4rem;
+    margin: 2rem 0;
+}
+
+.frase-sensibilizadora {
+    font-style: italic;
+    color: #2E7D32;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+/* Texto para el acceso seguro */
+.texto-seguro {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.texto-seguro a {
+    color: #388E3C;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.texto-seguro a:hover {
+    text-decoration: underline;
+}
+/* EMOJI INTERACTIVO para Recicladores */
+.emoji-recolector {
+    font-size: 3.5rem; /* Tamaño grande */
+    margin: 1rem 0;
+    cursor: pointer; /* Cambia el cursor a una manito para indicar que es clickeable */
+    transition: transform 0.2s; /* Para un efecto suave al pasar el mouse */
+}
+
+.emoji-recolector:hover {
+    transform: scale(1.1); /* Se agranda un poco al pasar el mouse */
+}
+/* Nota de aclaración para recicladores */
+.nota-aclaratoria {
+    background-color: #FFF8E1; /* Fondo amarillo muy clarito */
+    padding: 1rem;
+    border-radius: 5px;
+    border-left: 4px solid #FFB300; /* Barra lateral amarilla */
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.nota-aclaratoria p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #5D4037; /* Color marrón oscuro para buen contraste */
+}

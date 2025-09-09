@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recylin - Recicla con Conciencia</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- PANTALLA DE INICIO -->
+    <div class="pantalla" id="pantalla-inicio">
+        <!-- Header con nombre y logo -->
+        <div class="header">
+            <h1>♻️ Recylin</h1>
+            <p>Conectando recicladores y comunidades</p>
+        </div>
+
+        <h1>Tu pequeño gesto, el futuro del planeta.</h1>
+        
+        <!-- Contenedor de círculos -->
+        <div class="contenedor-circle">
+            <div class="circulo" id="plastico">🧴</div> <!-- Botella -->
+            <div class="circulo" id="papel">📦</div>   <!-- Caja -->
+            <div class="circulo" id="vidrio">🫙</div>  <!-- Tarro de vidrio -->
+            <div class="circulo" id="metal">🥫</div>   <!-- Lata -->
+        </div>
+        
+        <button class="btn-verde" onclick="mostrarRegistro()">¡Comenzar!</button>
+
+        <!-- ENLACE SEGURO PARA RECICLADORES -->
+        <p class="texto-seguro">¿Eres reciclador? <a href="#" onclick="mostrarLoginReciclador()">Accede de forma segura aquí</a></p>
+    </div>
+
+    <!-- PANTALLA DE REGISTRO DE USUARIO (SOLICITUD DE RECOGIDA) -->
+    <div class="pantalla oculto" id="pantalla-registro">
+        <h2>¡Programa tu recolección!</h2>
+        <p>Llena tus datos para que un reciclador pase por tu material:</p>
+        <form>
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="text" placeholder="Tu dirección completa" required>
+            <input type="tel" placeholder="Tu número de teléfono" required>
+            <label>¿Qué día puedes dejar el reciclaje listo?</label>
+            <input type="date" required>
+            <button type="button">Solicitar recogida</button>
+        </form>
+    </div>
+
+    <!-- PANTALLA DE CONFIRMACIÓN -->
+    <div class="pantalla oculto" id="pantalla-confirmacion">
+        <h2>¡Gracias por reciclar!</h2>
+        <p>Un reciclador ha sido notificado y pasará por tu material.</p>
+        <div class="imagen-recolector">🛒🎵</div>
+        <p class="frase-sensibilizadora">Cada acción cuenta. ¡Tú marcas la diferencia!</p>
+        <button onclick="playSound()">🎵 Escuchar notificación</button>
+        <audio id="sound" src=""></audio>
+    </div>
+
+    <!-- PANTALLA DE LOGIN PARA RECICLADORES -->
+    <div class="pantalla oculto" id="pantalla-login-reciclador">
+        <h2>Acceso Seguro para Recicladores</h2>
+        <!-- EMOJI INTERACTIVO -->
+        <div class="emoji-recolector" onclick="playSound()">🚮 ♻️ 👷</div>
+        
+        <!-- NOTA DE ACLARACIÓN -->
+        <div class="nota-aclaratoria">
+            <p><strong>Si eres usuario de una vivienda, no necesitas esto.</strong> Cierra esta ventana y usa el botón "¡Comenzar!" de la pantalla principal para solicitar tu recogida.</p>
+            <p>Esta área es solo para recicladores con credenciales autorizadas.</p>
+        </div>
+
+        <form>
+            <input type="text" placeholder="Usuario" required>
+            <input type="password" placeholder="Contraseña" required>
+            <!-- BOTÓN CORREGIDO: -->
+            <button type="button">Ingresar</button>
+        </form>
+        <p class="texto-seguro">¿Eres usuario? <a href="#" onclick="mostrarInicio()">Solicita una recogida aquí</a></p>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
