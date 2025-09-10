@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+    <!-- ================================================== -->
     <!-- PANTALLA DE INICIO -->
+    <!-- ================================================== -->
     <div class="pantalla" id="pantalla-inicio">
-        <!-- Header con nombre y logo -->
         <div class="header">
             <h1>♻️ Recylin</h1>
             <p>Conectando recicladores y comunidades</p>
@@ -17,21 +18,149 @@
 
         <h1>Tu pequeño gesto, el futuro del planeta.</h1>
         
-        <!-- Contenedor de círculos -->
         <div class="contenedor-circle">
-            <div class="circulo" id="plastico">🧴</div> <!-- Botella -->
-            <div class="circulo" id="papel">📦</div>   <!-- Caja -->
-            <div class="circulo" id="vidrio">🫙</div>  <!-- Tarro de vidrio -->
-            <div class="circulo" id="metal">🥫</div>   <!-- Lata -->
+            <div class="circulo" id="plastico">🧴</div>
+            <div class="circulo" id="papel">📦</div>
+            <div class="circulo" id="vidrio">🫙</div>
+            <div class="circulo" id="metal">🥫</div>
         </div>
         
-        <button class="btn-verde" onclick="mostrarRegistro()">¡Comenzar!</button>
+        <button class="btn-verde" id="btnUsuario">Soy Usuario</button>
+        <button class="btn-verde" id="btnReciclador">Soy Reciclador</button>
 
-        <!-- ENLACE SEGURO PARA RECICLADORES -->
-        <p class="texto-seguro">¿Eres reciclador? <a href="#" onclick="mostrarLoginReciclador()">Accede de forma segura aquí</a></p>
+        <p class="texto-seguro">
+            ¿Ya tienes cuenta? 
+            <a href="#" id="linkLoginUsuario">Inicia sesión como usuario</a> o 
+            <a href="#" id="linkLoginReciclador">como reciclador</a>
+        </p>
     </div>
 
-    <!-- PANTALLA DE REGISTRO DE USUARIO (SOLICITUD DE RECOGIDA) -->
+    <!-- ================================================== -->
+    <!-- PANTALLA DE REGISTRO USUARIO VIVIENDA -->
+    <!-- ================================================== -->
+    <div class="pantalla oculto" id="pantalla-registro-usuario">
+        <h2>¡Regístrate como Usuario!</h2>
+        <p>Crea tu cuenta para programar recolecciones a domicilio.</p>
+        
+        <form>
+            <label>👤 Nombre completo</label>
+            <input type="text" placeholder="Ej: Ana Pérez" required>
+            
+            <label>📞 Número de teléfono</label>
+            <input type="tel" placeholder="Ej: 310 987 6543" required>
+            
+            <label>🏠 Dirección completa</label>
+            <input type="text" placeholder="Ej: Calle 123 #45-67" required>
+
+            <label>📍 Zona/Barrio donde vives</label>
+            <select required>
+                <option value="">-- Elige tu zona --</option>
+                <option value="norte">Zona Norte</option>
+                <option value="sur">Zona Sur</option>
+                <option value="este">Zona Este</option>
+                <option value="oeste">Zona Oeste</option>
+                <option value="centro">Centro</option>
+            </select>
+            
+            <label>🔒 Contraseña</label>
+            <input type="password" placeholder="Crea una contraseña segura" required>
+            
+            <button type="button" id="btnRegistrarUsuario">Crear mi cuenta</button>
+        </form>
+        
+        <p class="texto-seguro">
+            ¿Ya tienes cuenta? <a href="#" id="linkLoginDesdeRegistroUsuario">Inicia sesión aquí</a>
+        </p>
+        <button class="btn-verde" id="btnVolverInicio1">Volver al Inicio</button>
+    </div>
+
+    <!-- ================================================== -->
+    <!-- PANTALLA DE LOGIN USUARIO VIVIENDA -->
+    <!-- ================================================== -->
+    <div class="pantalla oculto" id="pantalla-login-usuario">
+        <h2>Iniciar Sesión - Usuario</h2>
+        
+        <form>
+            <label>📞 Teléfono</label>
+            <input type="tel" placeholder="Tu número de teléfono" required>
+            
+            <label>🔒 Contraseña</label>
+            <input type="password" placeholder="Tu contraseña" required>
+            
+            <button type="button" id="btnLoginUsuario">Ingresar</button>
+        </form>
+        
+        <p class="texto-seguro">
+            ¿No tienes cuenta? <a href="#" id="linkRegistroDesdeLoginUsuario">Regístrate aquí</a>
+        </p>
+        <button class="btn-verde" id="btnVolverInicio2">Volver al Inicio</button>
+    </div>
+
+    <!-- ================================================== -->
+    <!-- PANTALLA DE REGISTRO RECICLADOR -->
+    <!-- ================================================== -->
+    <div class="pantalla oculto" id="pantalla-registro-reciclador">
+        <h2>¡Regístrate como Reciclador!</h2>
+        <p>Crea tu cuenta para recibir solicitudes de recolección en tu zona.</p>
+        
+        <form>
+            <label>👤 Nombre completo</label>
+            <input type="text" placeholder="Ej: Carlos Rodríguez" required>
+            
+            <label>📞 Número de teléfono</label>
+            <input type="tel" placeholder="Ej: 300 123 4567" required>
+            
+            <label>📍 Zona de trabajo</label>
+            <select required>
+                <option value="">-- Elige tu zona --</option>
+                <option value="norte">Zona Norte</option>
+                <option value="sur">Zona Sur</option>
+                <option value="este">Zona Este</option>
+                <option value="oeste">Zona Oeste</option>
+                <option value="centro">Centro</option>
+            </select>
+            
+            <label>🔒 Contraseña</label>
+            <input type="password" placeholder="Crea una contraseña segura" required>
+            
+            <button type="button" id="btnRegistrarReciclador">Crear mi cuenta</button>
+        </form>
+        
+        <p class="texto-seguro">
+            ¿Ya tienes cuenta? <a href="#" id="linkLoginDesdeRegistroReciclador">Inicia sesión aquí</a>
+        </p>
+        <button class="btn-verde" id="btnVolverInicio3">Volver al Inicio</button>
+    </div>
+
+    <!-- ================================================== -->
+    <!-- PANTALLA DE LOGIN RECICLADOR -->
+    <!-- ================================================== -->
+    <div class="pantalla oculto" id="pantalla-login-reciclador">
+        <h2>Iniciar Sesión - Reciclador</h2>
+        
+        <div class="nota-aclaratoria">
+            <p>Esta área es solo para recicladores con credenciales autorizadas.</p>
+        </div>
+
+        <form>
+            <label>📞 Teléfono</label>
+            <input type="tel" placeholder="Tu número de teléfono" required>
+            
+            <label>🔒 Contraseña</label>
+            <input type="password" placeholder="Tu contraseña" required>
+            
+            <button type="button" id="btnLoginReciclador">Ingresar</button>
+        </form>
+        
+        <p class="texto-seguro">
+            ¿No tienes cuenta? <a href="#" id="linkRegistroDesdeLoginReciclador">Regístrate aquí</a>
+        </p>
+        <button class="btn-verde" id="btnVolverInicio4">Volver al Inicio</button>
+    </div>
+
+    <!-- ================================================== -->
+    <!-- PANTALLA DE SOLICITUD RECOGIDA -->
+    <!-- ================================================== -->
     <div class="pantalla oculto" id="pantalla-registro">
         <h2>¡Programa tu recolección!</h2>
         <p>Llena tus datos para que un reciclador pase por tu material:</p>
@@ -39,43 +168,46 @@
             <input type="text" placeholder="Tu nombre" required>
             <input type="text" placeholder="Tu dirección completa" required>
             <input type="tel" placeholder="Tu número de teléfono" required>
+            
+            <label>📍 Zona/Barrio</label>
+            <select required>
+                <option value="">-- Elige tu zona --</option>
+                <option value="norte">Zona Norte</option>
+                <option value="sur">Zona Sur</option>
+                <option value="este">Zona Este</option>
+                <option value="oeste">Zona Oeste</option>
+                <option value="centro">Centro</option>
+            </select>
+            
             <label>¿Qué día puedes dejar el reciclaje listo?</label>
             <input type="date" required>
-            <button type="button">Solicitar recogida</button>
+            
+            <label for="reciclador">Selecciona el reciclador que prefieres:</label>
+            <select id="reciclador" required>
+                <option value="">-- Elige un reciclador --</option>
+                <option value="maria_garcia">María García</option>
+                <option value="carlos_rodriguez">Carlos Rodríguez</option>
+                <option value="ana_martinez">Ana Martínez</option>
+            </select>
+            
+            <button type="button" id="btnSolicitarRecogida">Solicitar recogida</button>
         </form>
+        <button class="btn-verde" id="btnVolverInicio5">Volver al Inicio</button>
     </div>
 
+    <!-- ================================================== -->
     <!-- PANTALLA DE CONFIRMACIÓN -->
+    <!-- ================================================== -->
     <div class="pantalla oculto" id="pantalla-confirmacion">
         <h2>¡Gracias por reciclar!</h2>
         <p>Un reciclador ha sido notificado y pasará por tu material.</p>
         <div class="imagen-recolector">🛒🎵</div>
         <p class="frase-sensibilizadora">Cada acción cuenta. ¡Tú marcas la diferencia!</p>
-        <button onclick="playSound()">🎵 Escuchar notificación</button>
-        <audio id="sound" src=""></audio>
+        <button id="btnSonido">🎵 Escuchar notificación</button>
+        <button class="btn-verde" id="btnVolverInicio6">Volver al Inicio</button>
     </div>
 
-    <!-- PANTALLA DE LOGIN PARA RECICLADORES -->
-    <div class="pantalla oculto" id="pantalla-login-reciclador">
-        <h2>Acceso Seguro para Recicladores</h2>
-        <!-- EMOJI INTERACTIVO -->
-        <div class="emoji-recolector" onclick="playSound()">🚮 ♻️ 👷</div>
-        
-        <!-- NOTA DE ACLARACIÓN -->
-        <div class="nota-aclaratoria">
-            <p><strong>Si eres usuario de una vivienda, no necesitas esto.</strong> Cierra esta ventana y usa el botón "¡Comenzar!" de la pantalla principal para solicitar tu recogida.</p>
-            <p>Esta área es solo para recicladores con credenciales autorizadas.</p>
-        </div>
-
-        <form>
-            <input type="text" placeholder="Usuario" required>
-            <input type="password" placeholder="Contraseña" required>
-            <!-- BOTÓN CORREGIDO: -->
-            <button type="button">Ingresar</button>
-        </form>
-        <p class="texto-seguro">¿Eres usuario? <a href="#" onclick="mostrarInicio()">Solicita una recogida aquí</a></p>
-    </div>
-
+    <!-- ✅ SCRIPT AL FINAL - BIEN UBICADO -->
     <script src="./script.js"></script>
 </body>
 </html>

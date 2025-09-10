@@ -1,4 +1,6 @@
-/* Este código resetea los estilos que el navegador pone por defecto */
+/* ================================================== */
+/* ESTILOS GENERALES */
+/* ================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,195 +8,354 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #E8F5E9; /* Un verde clarito, como de naturaleza */
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Esto hace que ocupe toda la altura de la pantalla */
-    color: #333; /* Color de texto oscuro */
-}
-
-/* Estilos para las pantallas */
-.pantalla {
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
+    min-height: 100vh;
+    color: #333;
     padding: 20px;
 }
 
-.oculto {
-    display: none; /* Esta clase oculta la pantalla */
+/* ================================================== */
+/* PANTALLAS */
+/* ================================================== */
+.pantalla {
+    background: white;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
 }
 
-/* ===== HEADER NUEVO ===== */
+.oculto {
+    display: none;
+}
+
+/* ================================================== */
+/* HEADER */
+/* ================================================== */
 .header {
     margin-bottom: 2rem;
     text-align: center;
 }
 
 .header h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 0.5rem;
     color: #2E7D32;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header p {
     color: #666;
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
-/* Estilo del título principal */
+/* ================================================== */
+/* TÍTULOS */
+/* ================================================== */
+h1, h2 {
+    margin-bottom: 1.5rem;
+    color: #2E7D32;
+    text-align: center;
+}
+
 h1 {
-    margin-bottom: 2rem;
-    color: #2E7D32; /* Verde oscuro */
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
-/* Contenedor de los círculos */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* ================================================== */
+/* CONTENEDOR DE CÍRCULOS */
+/* ================================================== */
 .contenedor-circle {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 15px;
     margin-bottom: 2rem;
 }
 
-/* Estilo general de TODOS los círculos */
 .circulo {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%; /* ¡Esta línea lo hace circular! */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    margin: 0.5rem;
+    font-size: 2.2rem;
     color: white;
     font-weight: bold;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-/* Colores para cada tipo de material (EMOJIS CORREGIDOS) */
-#plastico { background-color: #FFEB3B; } /* Amarillo - Botella 🧴 */
-#papel    { background-color: #2196F3; } /* Azul - Caja 📦 */
-#vidrio   { background-color: #4CAF50; } /* Verde - Tarro 🫙 */
-#metal    { background-color: #9E9E9E; } /* Gris - Lata 🥫 */
+.circulo:hover {
+    transform: scale(1.1);
+}
 
-/* ===== FORMULARIO ===== */
+#plastico { 
+    background-color: #FFEB3B; 
+    box-shadow: 0 4px 15px rgba(255, 235, 59, 0.4);
+}
+#papel { 
+    background-color: #2196F3; 
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+}
+#vidrio { 
+    background-color: #4CAF50; 
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+#metal { 
+    background-color: #9E9E9E; 
+    box-shadow: 0 4px 15px rgba(158, 158, 158, 0.4);
+}
+
+/* ================================================== */
+/* FORMULARIOS */
+/* ================================================== */
 form {
     display: flex;
     flex-direction: column;
-}
-
-form input {
-    width: 100%;
-    padding: 0.8rem;
-    margin: 0.5rem 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+    gap: 15px;
+    margin: 20px 0;
 }
 
 form label {
     display: block;
-    margin-top: 1rem;
     text-align: left;
     color: #555;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
 }
 
-form input[type="date"] {
+form input, form select {
     width: 100%;
-    padding: 0.8rem;
-    margin: 0.5rem 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
     font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
-/* ===== BOTONES ===== */
-/* Botón VERDE principal */
+form input:focus, form select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* ================================================== */
+/* BOTONES */
+/* ================================================== */
 .btn-verde {
-    background-color: #388E3C; /* Verde tierra */
+    background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);
     color: white;
     border: none;
-    padding: 1rem 2rem;
+    padding: 18px 35px;
     font-size: 1.2rem;
     border-radius: 50px;
     cursor: pointer;
-    margin-top: 1rem;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(56, 142, 60, 0.3);
 }
 
 .btn-verde:hover {
-    background-color: #2E7D32; /* Un verde un poco más oscuro al pasar el mouse */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(56, 142, 60, 0.4);
 }
 
-/* Botones generales */
+.btn-verde:active {
+    transform: translateY(0);
+}
+
 button {
-    background-color: #388E3C;
+    background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);
     color: white;
     border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 5px;
+    padding: 15px 25px;
+    border-radius: 10px;
     cursor: pointer;
-    margin-top: 1rem;
     font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 10px 0;
 }
 
 button:hover {
-    background-color: #2E7D32;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(56, 142, 60, 0.3);
 }
 
-/* ===== PANTALLA DE CONFIRMACIÓN ===== */
+/* ================================================== */
+/* PANTALLA DE CONFIRMACIÓN */
+/* ================================================== */
 .imagen-recolector {
-    font-size: 4rem;
+    font-size: 5rem;
     margin: 2rem 0;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
 }
 
 .frase-sensibilizadora {
     font-style: italic;
     color: #2E7D32;
-    margin-top: 1rem;
+    margin: 1.5rem 0;
     font-size: 1.1rem;
+    line-height: 1.5;
 }
-/* Texto para el acceso seguro */
+
+/* ================================================== */
+/* TEXTO SEGURO Y ENLACES */
+/* ================================================== */
 .texto-seguro {
     margin-top: 2rem;
     font-size: 0.9rem;
     color: #666;
+    line-height: 1.5;
 }
 
 .texto-seguro a {
     color: #388E3C;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .texto-seguro a:hover {
+    color: #2E7D32;
     text-decoration: underline;
 }
-/* EMOJI INTERACTIVO para Recicladores */
+
+/* ================================================== */
+/* EMOJI INTERACTIVO */
+/* ================================================== */
 .emoji-recolector {
-    font-size: 3.5rem; /* Tamaño grande */
-    margin: 1rem 0;
-    cursor: pointer; /* Cambia el cursor a una manito para indicar que es clickeable */
-    transition: transform 0.2s; /* Para un efecto suave al pasar el mouse */
+    font-size: 4rem;
+    margin: 1.5rem 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .emoji-recolector:hover {
-    transform: scale(1.1); /* Se agranda un poco al pasar el mouse */
+    transform: scale(1.2) rotate(5deg);
 }
-/* Nota de aclaración para recicladores */
+
+/* ================================================== */
+/* NOTA ACLARATORIA */
+/* ================================================== */
 .nota-aclaratoria {
-    background-color: #FFF8E1; /* Fondo amarillo muy clarito */
-    padding: 1rem;
-    border-radius: 5px;
-    border-left: 4px solid #FFB300; /* Barra lateral amarilla */
-    margin: 1rem 0;
+    background-color: #FFF8E1;
+    padding: 1.2rem;
+    border-radius: 12px;
+    border-left: 5px solid #FFB300;
+    margin: 1.5rem 0;
     text-align: left;
 }
 
 .nota-aclaratoria p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
-    color: #5D4037; /* Color marrón oscuro para buen contraste */
+    color: #5D4037;
+    line-height: 1.4;
+}
+
+/* ================================================== */
+/* RESPONSIVE - ADAPTACIÓN A MÓVILES */
+/* ================================================== */
+@media (max-width: 600px) {
+    .pantalla {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .circulo {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+    
+    .btn-verde {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+    }
+    
+    form input, form select {
+        padding: 12px;
+    }
+}
+
+/* ================================================== */
+/* ANIMACIONES SUAVES */
+/* ================================================== */
+.pantalla {
+    animation: aparecer 0.5s ease-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================================== */
+/* ESTILOS PARA BOTONES DE VOLVER */
+/* ================================================== */
+button[onclick*="mostrarInicio"] {
+    background: linear-gradient(135deg, #78909C 0%, #546E7A 100%);
+    margin-top: 20px;
+}
+
+button[onclick*="mostrarInicio"]:hover {
+    box-shadow: 0 5px 15px rgba(84, 110, 122, 0.3);
+}
+
+/* ================================================== */
+/* MEJORAS DE ACCESIBILIDAD */
+/* ================================================== */
+@media (prefers-reduced-motion: reduce) {
+    .circulo, .btn-verde, .emoji-recolector, .pantalla {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* ================================================== */
+/* ESTADO DE CARGANDO */
+/* ================================================== */
+.cargando {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.cargando::after {
+    content: " ⏳";
 }
